@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 //import './App.css';
-//import './assets/css/bootstrap.min.css';
 //import Header from './components/layout/Header';
 import Sidebar from './components/layout/sidebar';
 import Footer from './components/layout/footer';
