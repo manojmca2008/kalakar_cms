@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
+import { logout } from '../../services/auth-services';
 class Sidebar extends Component {
   constructor(props) {
     super(props);
     this.state = {
     };
+  }
+  logout(e){
+    logout();
+    localStorage.setItem('isLogin', '');
+    window.location.reload('/');
   }
   render() {
     return (
@@ -58,6 +63,14 @@ class Sidebar extends Component {
                 <a href="./notifications.html">
                   <i className="material-icons text-gray">notifications</i>
                   <p>Notifications</p>
+                </a>
+              </li>
+              <li>
+                <button className="" onClick={(event) => this.logout(event)}>Logout</button>
+
+                <a href="./notifications.html">
+                  <i className="material-icons text-gray"></i>
+                  <p>Logout</p>
                 </a>
               </li>
               <li className="active-pro">

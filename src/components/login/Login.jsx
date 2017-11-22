@@ -7,7 +7,7 @@ class Login extends Component {
         this.state = {
             email: '',
             password: '',
-            log_error:''
+            firebase_login_error: ''
         }
         this.handleInputChange = this.handleInputChange.bind(this);
     }
@@ -16,29 +16,28 @@ class Login extends Component {
         const target = event.target;
         const value = target.value;
         const name = target.name;
-    
+
         this.setState({
-          [name]: value
+            [name]: value
         });
-      }
+    }
     handleClick(e) {
-        var self = this;        
-        e.preventDefault();        
-          login(this.state.email, this.state.password).then(response => {
-              console.log(JSON.stringify(response));
-              localStorage.setItem("isLogin", true);
+        var self = this;
+        e.preventDefault();
+        login(this.state.email, this.state.password).then(response => {            
+            localStorage.setItem("isLogin", true);
             this.setState({
-                log_error: ''
-              });
-            var uploadScreen=[];
-            uploadScreen.push(<UploadScreen appContext={self.props.appContext}/>)
-            self.props.appContext.setState({loginPage:[],uploadScreen:uploadScreen});            
-          }).catch(err => {
-            this.setState({
-              log_error: err.message
+                firebase_login_error: ''
             });
-          })
-        }
+            var uploadScreen = [];
+            uploadScreen.push(<UploadScreen appContext={self.props.appContext} />)
+            self.props.appContext.setState({ loginPage: [], uploadScreen: uploadScreen });
+        }).catch(err => {
+            this.setState({
+                firebase_login_error: err.message
+            });
+        })
+    }
 
 
     render() {
@@ -51,23 +50,23 @@ class Login extends Component {
                             <div class="panel-body">
                                 <fieldset>
                                     <div class="form-group">
-                                    <input 
-                                        class="form-control"
-                                        placeholder="E-mail"
-                                        name="email"
-                                        type="email"
-                                        value={this.state.email}
-                                        onChange={this.handleInputChange} />
+                                        <input
+                                            class="form-control"
+                                            placeholder="E-mail"
+                                            name="email"
+                                            type="email"
+                                            value={this.state.email}
+                                            onChange={this.handleInputChange} />
                                     </div>
 
                                     <div class="form-group">
-                                    <input 
-                                        class="form-control"
-                                        placeholder="Password" 
-                                        name="password"
-                                        type="password"
-                                        value={this.state.password}
-                                        onChange={this.handleInputChange} />
+                                        <input
+                                            class="form-control"
+                                            placeholder="Password"
+                                            name="password"
+                                            type="password"
+                                            value={this.state.password}
+                                            onChange={this.handleInputChange} />
                                     </div>
                                     <div class="checkbox">
                                         <label>
@@ -75,8 +74,8 @@ class Login extends Component {
                                         </label>
                                     </div>
                                     <div className="error">
-                                        {this.state.log_error}
-                                    </div> 
+                                        {this.state.firebase_login_error}
+                                    </div>
                                     <button class="btn btn-primary" onClick={(event) => this.handleClick(event)}>Login</button>
                                 </fieldset>
                             </div>
