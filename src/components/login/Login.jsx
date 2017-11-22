@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import UploadScreen from './UploadScreen';
-import { login } from '../../services/auth-services';
+import { loginWithTwitter, loginWithGoogle, loginWithFacebook, login } from '../../services/auth-services';
 class Login extends Component {
     constructor(props) {
         super(props);
@@ -23,16 +23,10 @@ class Login extends Component {
         });
     }
     handleClick(e) {
-        var self = this;
         e.preventDefault();
-        login(this.state.email, this.state.password).then(response => {            
-            localStorage.setItem("isLogin", true);
-            this.setState({
-                firebase_login_error: ''
-            });
-            var uploadScreen = [];
-            uploadScreen.push(<UploadScreen appContext={self.props.appContext} />)
-            self.props.appContext.setState({ loginPage: [], uploadScreen: uploadScreen });
+        var self = this;
+        login(this.state.email, this.state.password).then(response => {
+            this.doLogin(self);
         }).catch(err => {
             this.setState({
                 firebase_login_error: err.message
@@ -40,6 +34,47 @@ class Login extends Component {
         })
     }
 
+    facebookLogin(e) {
+        e.preventDefault();
+        var self = this;
+        loginWithFacebook().then(response => {
+            this.doLogin(self);
+        }).catch(err => {
+            this.setState({
+                firebase_login_error: err.message
+            });
+        })
+    }
+
+    googleLogin(e) {
+        e.preventDefault();
+        var self = this;
+        loginWithGoogle().then(response => {
+            this.doLogin(self);
+        }).catch(err => {
+            console.log(err);
+        })
+    }
+
+    twitterLogin(e) {
+        e.preventDefault();
+        var self = this;
+        loginWithTwitter().then(response => {
+            this.doLogin(self);
+        }).catch(err => {
+            console.log(err);
+        })
+    }
+
+    doLogin(self) {
+        localStorage.setItem("isLogin", true);
+        this.setState({
+            firebase_login_error: ''
+        });
+        var uploadScreen = [];
+        uploadScreen.push(<UploadScreen appContext={self.props.appContext} />)
+        self.props.appContext.setState({ loginPage: [], uploadScreen: uploadScreen });
+    }
 
     render() {
         return (
@@ -92,9 +127,18 @@ class Login extends Component {
                             <p className="_title">Sign in With Social Media</p>
                             <p>You can also sign in with your social media accounts</p>
                             <div className="btn_socialmedia">
-                                <a href="//www.facebook.com/" className="btn _fb">Facebook</a>
-                                <a href="//www.twitter.com/" className="btn _twitter">twitter</a>
-                                <a href="//www.plus.google.com/" className="btn _google">google +</a>
+                                <a href="javascript:void(0);"
+                                    className="btn _fb"
+                                    onClick={(e) => this.facebookLogin(e)}>Facebook
+                                </a>
+                                <a href="javascript:void(0);"
+                                    className="btn _twitter"
+                                    onClick={(e) => this.twitterLogin(e)}>Twitter
+                                </a>
+                                <a href="javascript:void(0);"
+                                    className="btn _google"
+                                    onClick={(e) => this.googleLogin(e)}>google
+                                </a>
                             </div>
 
                         </div>
