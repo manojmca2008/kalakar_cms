@@ -7,7 +7,8 @@ class Login extends Component {
         this.state = {
             email: '',
             password: '',
-            log_error: ''
+            firebase_login_error: ''
+
         }
         this.handleInputChange = this.handleInputChange.bind(this);
     }
@@ -24,18 +25,17 @@ class Login extends Component {
     handleClick(e) {
         var self = this;
         e.preventDefault();
-        login(this.state.email, this.state.password).then(response => {
-            console.log(JSON.stringify(response));
+        login(this.state.email, this.state.password).then(response => {            
             localStorage.setItem("isLogin", true);
             this.setState({
-                log_error: ''
+                firebase_login_error: ''
             });
             var uploadScreen = [];
             uploadScreen.push(<UploadScreen appContext={self.props.appContext} />)
             self.props.appContext.setState({ loginPage: [], uploadScreen: uploadScreen });
         }).catch(err => {
             this.setState({
-                log_error: err.message
+                firebase_login_error: err.message
             });
         })
     }
@@ -81,9 +81,10 @@ class Login extends Component {
                                         </label>
                                     </div>
                                     <div className="error">
-                                        {this.state.log_error}
+                                        {this.state.firebase_login_error}
                                     </div>
                                     <div className="_mainbutalign"><button className="btn btn-primary" onClick={(event) => this.handleClick(event)}>Login</button></div>
+
                                 </fieldset>
                             </div>
                         </div>

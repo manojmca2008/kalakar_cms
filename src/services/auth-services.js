@@ -72,8 +72,7 @@ import firebase from 'firebase'
   }
 
  export function logout() {
-    firebase.auth().signOut();
-    localStorage.setItem('isLogin', false);
+    firebase.auth().signOut();    
   }
  export function forgotPassword(email){
     return firebaseAuth.auth().sendPasswordResetEmail(email).then(function (result){
