@@ -52,11 +52,9 @@ class Loginscreen extends Component {
     return (
       <div className="loginscreen">
         {this.state.loginscreen}
-        <div style={{paddingLeft:529}}>
-          {this.state.loginmessage}
-            <div >
-               <button class="btn btn-primary" onClick={(event) => this.handleClick(event)}>{this.state.buttonLabel}</button>
-           </div>
+        <div className="footer_register">
+          <p className="txt_registeredyet">{this.state.loginmessage}</p>
+          <button className="btn btn-primary" onClick={(event) => this.handleClick(event)}>{this.state.buttonLabel}</button>
         </div>
       </div>
     );

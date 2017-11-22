@@ -8,6 +8,7 @@ class Login extends Component {
             email: '',
             password: '',
             firebase_login_error: ''
+
         }
         this.handleInputChange = this.handleInputChange.bind(this);
     }
@@ -42,16 +43,18 @@ class Login extends Component {
 
     render() {
         return (
-            <div >
-                <div class="row">
-                    <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
-                        <div class="login-panel panel panel-default">
-                            <div class="panel-heading">Log in</div>
-                            <div class="panel-body">
+            <div className="screen_login">
+                <div className="row">
+                    <div className="col-md-7 col-xs-12">
+
+
+                        <div className="login-panel panel panel-default">
+                            <div className="_title">Sign in</div>
+                            <div className="panel-body">
                                 <fieldset>
-                                    <div class="form-group">
+                                    <div className="form-group">
                                         <input
-                                            class="form-control"
+                                            className="form-control"
                                             placeholder="E-mail"
                                             name="email"
                                             type="email"
@@ -59,16 +62,16 @@ class Login extends Component {
                                             onChange={this.handleInputChange} />
                                     </div>
 
-                                    <div class="form-group">
+                                    <div className="form-group">
                                         <input
-                                            class="form-control"
+                                            className="form-control"
                                             placeholder="Password"
                                             name="password"
                                             type="password"
                                             value={this.state.password}
                                             onChange={this.handleInputChange} />
                                     </div>
-                                    <div class="checkbox">
+                                    <div className="checkbox">
                                         <label>
                                             <input name="remember" type="checkbox" value="Remember Me" />Remember Me
                                         </label>
@@ -76,12 +79,28 @@ class Login extends Component {
                                     <div className="error">
                                         {this.state.firebase_login_error}
                                     </div>
-                                    <button class="btn btn-primary" onClick={(event) => this.handleClick(event)}>Login</button>
+                                    <div className="_mainbutalign"><button className="btn btn-primary" onClick={(event) => this.handleClick(event)}>Login</button></div>
+
                                 </fieldset>
                             </div>
                         </div>
+
+                    </div>
+                    <div className="col-md-5 col-xs-12">
+                        <div className="section_socialmedia">
+
+                            <p className="_title">Sign in With Social Media</p>
+                            <p>You can also sign in with your social media accounts</p>
+                            <div className="btn_socialmedia">
+                                <a href="//www.facebook.com/" className="btn _fb">Facebook</a>
+                                <a href="//www.twitter.com/" className="btn _twitter">twitter</a>
+                                <a href="//www.plus.google.com/" className="btn _google">google +</a>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
+
             </div>
         );
     }

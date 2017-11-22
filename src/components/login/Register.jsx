@@ -92,11 +92,9 @@ class Register extends Component {
     }
     render() {
         return (
-            <div >
-                <div class="row">
-                    <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
+            <div className="screen_register">
                         <div class="login-panel panel panel-default">
-                            <div class="panel-heading">Register</div>
+                            <div class="_title">Register with your email address</div>
                             <div class="panel-body">
                                 <fieldset>
                                     <div class="form-group">
@@ -139,16 +137,12 @@ class Register extends Component {
                                             onChange={this.handleInputChange} />
                                     </div>
                                     <div className="error">
-                                        {this.state.reg_error}
-                                    </div>
-                                    <div className="panel panel-default">
                                         <FormErrors formErrors={this.state.formErrors} />
-                                    </div>
-                                    <button class="btn btn-primary" onClick={(event) => this.handleClick(event)}> Submit </button>
+                                        {this.state.reg_error}
+                                    </div>                                    
+                                    <div className="_mainbutalign"><button class="btn btn-primary" onClick={(event) => this.handleClick(event)}> Submit </button></div>
                                 </fieldset>
                             </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         );
