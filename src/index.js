@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import './assets/style/screen.css';
+
 import App from './App';
 import './jquery.dataTables.min.css';
 import { BrowserRouter } from 'react-router-dom'

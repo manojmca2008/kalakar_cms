@@ -4,13 +4,14 @@
   "private": true,
   "dependencies": {
     "axios": "^0.16.2",
+    "firebase": "^4.6.2",
     "jquery": "^3.2.1",
     "material-ui": "^0.19.4",
     "material-ui-datatables": "^0.18.2",
-    "react": "^16.0.0",
+    "react": "^16.1.1",
     "react-autobind": "^1.0.6",
     "react-calendar-component": "^1.2.2",
-    "react-dom": "^16.0.0",
+    "react-dom": "^16.1.1",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.0.14",
     "react-smart-data-table": "^0.5.1",
@@ -21,5 +22,18 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manojmca2008/kalakar_cms.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manojmca2008/kalakar_cms/issues"
+  },
+  "homepage": "https://github.com/manojmca2008/kalakar_cms#readme"
 }

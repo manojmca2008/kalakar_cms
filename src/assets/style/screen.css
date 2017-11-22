@@ -1,0 +1,7 @@
+/**Core**/
+@import url("core/bootstrap.min.css");
+@import url("core/material-dashboard.css");
+
+
+/**custom**/
+@import url("style.css");
