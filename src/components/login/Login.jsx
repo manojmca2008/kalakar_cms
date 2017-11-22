@@ -47,6 +47,7 @@ class Login extends Component {
                 <div className="row">
                     <div className="col-md-7 col-xs-12">
 
+                        
 
                         <div className="login-panel panel panel-default">
                             <div className="_title">Sign in</div>
@@ -71,6 +72,9 @@ class Login extends Component {
                                             value={this.state.password}
                                             onChange={this.handleInputChange} />
                                     </div>
+
+                                    <a href="javascript:void(0);" class="forgot-password">Forgot your password?</a>
+
                                     <div className="checkbox">
                                         <label>
                                             <input name="remember" type="checkbox" value="Remember Me" />Remember Me

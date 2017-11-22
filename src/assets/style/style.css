@@ -7,7 +7,7 @@ body{font-size:0.75rem;}
 /**Login**/
 .screen_register, .screen_login{max-width:800px;margin:3% auto 0;background:#fff;padding:2%;border:1px solid rgba(0, 0, 0, 0.1);}
 .login-panel .form-group{margin-top:17px;}
-.login-panel .checkbox{padding:10px 0 0;}
+.login-panel .checkbox{padding:25px 0 10px;}
 .footer_register{text-align:center;padding:20px 0;}
 .txt_registeredyet{font-size:1.25em;font-weight:bold;}
 .btn_socialmedia .btn{display:block;margin:30px auto 0;text-transform:capitalize;max-width:180px;padding:9px 0;box-shadow:none;font-weight: bold;}
