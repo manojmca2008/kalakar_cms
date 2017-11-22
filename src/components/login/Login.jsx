@@ -44,8 +44,6 @@ class Login extends Component {
     render() {
         return (
             <div className="screen_login">
-                <div className="row">
-                    <div className="col-md-7 col-xs-12">
 
                         
 
@@ -73,8 +71,6 @@ class Login extends Component {
                                             onChange={this.handleInputChange} />
                                     </div>
 
-                                    <a href="javascript:void(0);" class="forgot-password">Forgot your password?</a>
-
                                     <div className="checkbox">
                                         <label>
                                             <input name="remember" type="checkbox" value="Remember Me" />Remember Me
@@ -88,11 +84,9 @@ class Login extends Component {
                                 </fieldset>
                             </div>
                         </div>
-
-                    </div>
-                    <div className="col-md-5 col-xs-12">
+                        
+                    
                         <div className="section_socialmedia">
-
                             <p className="_title">Sign in With Social Media</p>
                             <p>You can also sign in with your social media accounts</p>
                             <div className="btn_socialmedia">
@@ -102,9 +96,7 @@ class Login extends Component {
                             </div>
 
                         </div>
-                    </div>
-                </div>
-
+                        <p className="link_forgot_password"><a href="javascript:void(0);">Forgot your password?</a></p>
             </div>
         );
     }
