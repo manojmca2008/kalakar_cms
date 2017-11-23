@@ -92,14 +92,14 @@ class Register extends Component {
     }
     render() {
         return (
-            <div className="screen_register">
-                        <div class="login-panel panel panel-default">
-                            <div class="_title">Register with your email address</div>
-                            <div class="panel-body">
+            <div className="screen_register style_whitebox">
+                        <div className="login-panel panel panel-default">
+                            <div className="_title">Register with your email address</div>
+                            <div className="panel-body">
                                 <fieldset>
-                                    <div class="form-group">
+                                    <div className="form-group">
                                         <input
-                                            class="form-control"
+                                            className="form-control"
                                             placeholder="First name"
                                             name="fname"
                                             type="text"
@@ -107,9 +107,9 @@ class Register extends Component {
                                             onChange={this.handleInputChange} />
                                     </div>
 
-                                    <div class="form-group">
+                                    <div className="form-group">
                                         <input
-                                            class="form-control"
+                                            className="form-control"
                                             placeholder="Last name"
                                             name="lname"
                                             type="text"
@@ -117,9 +117,9 @@ class Register extends Component {
                                             onChange={this.handleInputChange} />
                                     </div>
 
-                                    <div class="form-group">
+                                    <div className="form-group">
                                         <input
-                                            class="form-control"
+                                            className="form-control"
                                             placeholder="E-mail"
                                             name="email"
                                             type="email"
@@ -127,9 +127,9 @@ class Register extends Component {
                                             onChange={this.handleInputChange} />
                                     </div>
 
-                                    <div class="form-group">
+                                    <div className="form-group">
                                         <input
-                                            class="form-control"
+                                            className="form-control"
                                             placeholder="Password"
                                             name="password"
                                             type="password"
@@ -140,7 +140,7 @@ class Register extends Component {
                                         <FormErrors formErrors={this.state.formErrors} />
                                         {this.state.reg_error}
                                     </div>                                    
-                                    <div className="_mainbutalign"><button class="btn btn-primary" onClick={(event) => this.handleClick(event)}> Submit </button></div>
+                                    <div className="_mainbutalign"><button class="btn btn-primary" onClick={(event) => this.handleClick(event)}> Register </button></div>
                                 </fieldset>
                             </div>
                 </div>

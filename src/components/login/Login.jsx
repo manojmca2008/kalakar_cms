@@ -78,7 +78,7 @@ class Login extends Component {
 
     render() {
         return (
-            <div className="screen_login">
+            <div className="screen_login style_whitebox">
 
                         
 
@@ -122,7 +122,7 @@ class Login extends Component {
                         
                     
                         <div className="section_socialmedia">
-                            <p className="_title">Sign in With Social Media</p>
+                            <p className="_title">Or Sign in With Social Media</p>
                             <p>You can also sign in with your social media accounts</p>
                             <div className="btn_socialmedia">
                                 <a href="javascript:void(0);"
@@ -140,7 +140,7 @@ class Login extends Component {
                             </div>
 
                         </div>
-                        <p className="link_forgot_password"><a href="javascript:void(0);">Forgot your password?</a></p>
+                        <p className="link_forgot_password"><a href="javascript:void(0);">Lost your password?</a></p>
             </div>
         );
     }

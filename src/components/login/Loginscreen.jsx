@@ -51,6 +51,7 @@ class Loginscreen extends Component {
   render() {
     return (
       <div className="loginscreen">
+        <div className="_brandlogo"><img src="../images/logo_kalakar.png" alt="" / ></div>
         {this.state.loginscreen}
         <div className="footer_register">
           <p className="txt_registeredyet">{this.state.loginmessage}</p>
