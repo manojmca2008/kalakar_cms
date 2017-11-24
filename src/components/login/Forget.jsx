@@ -47,7 +47,9 @@ class Forget extends Component {
 
     render() {
         return (
-            <div>
+            <div className="loginscreen">
+                <div class="_brandlogo"><img src="../images/logo_kalakar.png" alt="" /></div>
+                <div class="screen_login style_whitebox">
                 <div className="_title">Oh no, You Forgot Your Password?</div>
                 <div className="form-group">
                     <input
@@ -65,7 +67,7 @@ class Forget extends Component {
                     <button className="btn btn-primary" onClick={(event) => this.handleClick(event)}>Submt</button>
                     <button className="btn" onClick={(event) => this.handleGoBackClick(event)}>Go Back</button>
                 </div>
-
+                </div>
             </div>
         );
     }
