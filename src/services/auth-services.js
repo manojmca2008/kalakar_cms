@@ -75,7 +75,7 @@ import firebase from 'firebase'
     firebase.auth().signOut();    
   }
  export function forgotPassword(email){
-    return firebaseAuth.auth().sendPasswordResetEmail(email).then(function (result){
+    return new firebase.auth().sendPasswordResetEmail(email).then(function (result){
       return result;
     })
   }
