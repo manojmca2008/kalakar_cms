@@ -70,7 +70,7 @@ class Dashboard extends Component {
                     </nav>
                     <div className="content">
                         <div className="container-fluid">
-                            <Profile />
+                            <DashboardLanding />
                         </div>
                     </div>
 
