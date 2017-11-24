@@ -17,7 +17,6 @@ class Sidebar extends Component {
   }
   render() {
     return (
-      <div>
         <div className="sidebar section_sidebar" data-color="purple">
 
 
@@ -28,7 +27,7 @@ class Sidebar extends Component {
           <div className="sidebar-wrapper">
             <ul className="nav nav-pills flex-column">
               <li className="active">
-                <a href="dashboard.html">
+                <a href="/">
                   <i className="material-icons">dashboard</i>
                   Dashboard
                 </a>
@@ -80,7 +79,6 @@ class Sidebar extends Component {
             </ul>
           </div>
         </div>
-      </div>
     );
   }
 }

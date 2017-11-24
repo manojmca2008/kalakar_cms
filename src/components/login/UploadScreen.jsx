@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Sidebar from '../../components/layout/sidebar';
-import Footer from '../../components/layout/footer';
+import Sidebar from '../../components/layout/Sidebar';
+import Header from '../../components/layout/Header';
+
 import Main from '../../Main'
 class UploadScreen extends Component {
     constructor(props) {
@@ -14,11 +15,14 @@ class UploadScreen extends Component {
             <div>
             <div className="wrapper">
               <Sidebar />
-              <div className="main">
-                <div className="mainContent clearfix">
-                  <Main />
+                <div className="main-panel">
+                  <Header />
+                  <div className="content">
+                    <div className="container-fluid">
+                       <Main />
+                    </div>
+                    </div>
                 </div>
-              </div>
               {/* <Footer /> */}
             </div>
           </div>
