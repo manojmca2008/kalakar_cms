@@ -10,9 +10,9 @@ class Footer extends Component {
   render() {
     return (
       <div >
-        <footer class="footer">
-                <div class="container-fluid">
-                    <nav class="pull-left">
+        <footer className="footer">
+                <div className="container-fluid">
+                    <nav className="pull-left">
                         <ul>
                             <li>
                                 <a href="#">
@@ -36,7 +36,7 @@ class Footer extends Component {
                             </li>
                         </ul>
                     </nav>
-                    <p class="copyright pull-right">
+                    <p className="copyright pull-right">
                         &copy;
                         <script>
                             document.write(new Date().getFullYear())

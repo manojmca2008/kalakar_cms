@@ -2,6 +2,9 @@ import React, { Component } from 'react';
  
 import Login from './Login';
 import Register from './Register';
+
+import '../../assets/style/login.css';
+
 class Loginscreen extends Component {
   constructor(props){
     super(props);
