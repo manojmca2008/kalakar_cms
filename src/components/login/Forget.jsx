@@ -28,7 +28,7 @@ class Forget extends Component {
         } else {
             forgotPassword(this.state.email).then(value => {
                 this.setState({
-                    firebase_forget_error: ''
+                    firebase_forget_error: 'A link has been sent to your mail for reset your password'
                 });
 
             }).catch(err => {
