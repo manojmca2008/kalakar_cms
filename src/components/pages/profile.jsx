@@ -13,7 +13,7 @@ class Profile extends Component {
   render() {
     return (
       <div>
-        <div>Profile</div>
+          <p className="dashboard_title">Page Title</p>
       </div>
     );
   }

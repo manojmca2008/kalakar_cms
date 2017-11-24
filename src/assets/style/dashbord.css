@@ -1,16 +1,39 @@
 .sidebar{background:#fff;}
 .section_sidebar .nav-pills > li >a:not(.link){display:block;line-height:30px;padding:7px 20px;}
 
+.table{border:1px solid rgba(0, 0, 0, 0.1)}
+.table .btn{min-width:initial;display:inline-block;padding:0 5px;margin:0;}
+.table td, .table th{font-family:arial;}
+.table thead td{font-weight:bold;background:rgba(255, 255, 255, 0.5);}
+.table tbody td{background:#fff;}
+
 .sidebar ._brandlogo{padding:30px 0 10px;}
-.txt_footer_copyright{text-align:center;}
-
-
+.txt_footer_copyright{padding: 10px 0;border-top: 1px solid rgba(0, 0, 0, 0.1);margin-top:20px;text-align:center;}
 .dropdown-toggle::after{display:none}
+.dashboard_nav {background: rgba(0, 0, 0, 0.04);padding:15px 20px;border-bottom:1px solid rgba(0, 0, 0, 0.1);}
+.dashboard_nav ._title{float:left;line-height:24px;}
+.dashboard_nav .navbar-right{margin:0;}
+.dashboard_nav .navbar-right > li > a{color:rgb(85, 85, 85);padding:15px 0 0 15px;}
+.dashboard_nav .dropdown-menu{left:inherit;right:0;min-width:250px;}
+.dashboard_nav .dropdown-menu li a{display:block;padding:8px;}
+.dashboard_nav .dropdown-menu li em{display:block;padding:5px 10px 10px;border-bottom:1px solid rgba(0, 0, 0, 0.04);font:0.875em arial;font-style:italic;font-weight:bold;margin-bottom:5px;}
+
+/*nav*/
+.navbar-toggle{position:relative;float:right;padding:9px 10px;margin-top:8px;margin-right:15px;margin-bottom:8px;background-color:transparent;background-image:none;border:1px solid transparent;border-radius:4px}
+.navbar-toggle:focus{outline:0}
+.navbar-toggle .icon-bar{display:block;width:22px;height:2px;border-radius:1px}
+.navbar-toggle .icon-bar+.icon-bar{margin-top:4px}
+
+
+/****/
+.dashboard_title{font-size:1.5em;padding-bottom:15px;margin-bottom:15px;border-bottom:1px solid rgba(0, 0, 0, 0.05);}
+
 
 @media (min-width: 768px){
     .navbar-collapse.collapse{display: block!important;height:auto!important;padding-bottom: 0;overflow: visible!important;}
     .navbar-right {float: right!important;margin-right:-15px;}
     .navbar-nav > li {float:left;}
+    .navbar-toggle{display:none}
 }
 @media (min-width: 992px) {
    .sidebar .nav > li.txt_footer_copyright{position:absolute;width:100%;bottom:40px;background:#fff;}

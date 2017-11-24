@@ -1,6 +1,7 @@
 /**Core**/
 @import url("core/bootstrap.min.css");
 @import url("core/material-dashboard.css");
+@import url("core/core_bootstrap.css");
 @import url("//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css");
 @import url("//fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons");
 

@@ -5,17 +5,4 @@ p{margin:0;}
 /**title**/
 ._title{font:bold 1rem arial;}
 
-/*nav*/
-.navbar-toggle{position:relative;float:right;padding:9px 10px;margin-top:8px;margin-right:15px;margin-bottom:8px;background-color:transparent;background-image:none;border:1px solid transparent;border-radius:4px}
-.navbar-toggle:focus{outline:0}
-.navbar-toggle .icon-bar{display:block;width:22px;height:2px;border-radius:1px}
-.navbar-toggle .icon-bar+.icon-bar{margin-top:4px}
-
-.txt_footer_copyright{padding: 10px 0;border-top: 1px solid rgba(0, 0, 0, 0.1);margin-top:20px;}
-
-@media (min-width: 768px) {
-    .navbar-toggle {
-        display:none
-    }
-}
 
