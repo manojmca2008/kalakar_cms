@@ -78,9 +78,7 @@ class Login extends Component {
 
     render() {
         return (
-            <div className="screen_login style_whitebox">
-
-                        
+            <div className="screen_login style_whitebox">                  
 
                         <div className="login-panel panel panel-default">
                             <div className="_title">Sign in</div>
