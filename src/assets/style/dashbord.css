@@ -1,0 +1,17 @@
+.sidebar{background:#fff;}
+.section_sidebar .nav-pills > li >a:not(.link){display:block;line-height:30px;padding:7px 20px;}
+
+.sidebar ._brandlogo{padding:30px 0 10px;}
+.txt_footer_copyright{text-align:center;}
+
+
+.dropdown-toggle::after{display:none}
+
+@media (min-width: 768px){
+    .navbar-collapse.collapse{display: block!important;height:auto!important;padding-bottom: 0;overflow: visible!important;}
+    .navbar-right {float: right!important;margin-right:-15px;}
+    .navbar-nav > li {float:left;}
+}
+@media (min-width: 992px) {
+   .sidebar .nav > li.txt_footer_copyright{position:absolute;width:100%;bottom:40px;background:#fff;}
+}

@@ -1,0 +1,29 @@
+/**logo**/
+._brandlogo{text-align:center;padding:5% 0;}
+
+.loginscreen{max-width:400px;margin:0 auto;width:94%;}
+
+/**Login**/
+.style_whitebox{background:#fff;border:1px solid rgba(0, 0, 0, 0.1);padding:5%;}
+.login-panel .form-group{margin-top:17px;}
+.login-panel .checkbox{padding:8px 0 2px;}
+.login-panel .btn{width:100%;}
+._mainbutalign{margin:10px 0 0;}
+._mainbutalign .btn{margin:0;font-weight:bold;}
+.section_socialmedia{text-align:center;border:1px solid rgba(0, 0, 0, 0.1);border-left:0;border-right:0;margin:22px -5.8% 0;padding:20px 0 12px;}
+.section_socialmedia .btn{text-transform:capitalize;box-shadow:none;font-weight: bold;}
+._fb{background-color:#3b5998;}
+._fb:hover{background-color:#2c467b;}
+._twitter{background-color:#0084b4;}
+._twitter:hover{background-color:#00aced;}
+._google{background-color:#d34836;}
+._google:hover{background-color:#2d2d2d;}
+.link_forgot_password{text-align:center;padding:19px 0 0;}
+.link_forgot_password a{font-weight:bold;color:inherit;}
+.footer_register{text-align:center;padding:20px 0;}
+.txt_registeredyet{font-size:1.25em;font-weight:bold;}
+
+@media only screen and (max-width: 767px) {
+    .loginscreen .form-group .form-control{width:100%;}
+    .section_socialmedia .btn{display:block;max-width:200px;margin:10px auto 0;}
+}
