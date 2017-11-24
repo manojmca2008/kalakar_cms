@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import UploadScreen from './UploadScreen';
 import { loginWithTwitter, loginWithGoogle, loginWithFacebook, login } from '../../services/auth-services';
+import Forget from './Forget';
 class Login extends Component {
     constructor(props) {
         super(props);
@@ -76,6 +77,14 @@ class Login extends Component {
         self.props.appContext.setState({ loginPage: [], uploadScreen: uploadScreen });
     }
 
+    handleForgetClick(e){
+        var self = this;
+        localStorage.setItem("isForget", true);
+        var uploadScreen = [];
+        uploadScreen.push(<Forget appContext={self.props.appContext} />)
+        self.props.appContext.setState({ loginPage: [], uploadScreen: uploadScreen });
+    }
+
     render() {
         return (
             <div className="screen_login style_whitebox">                  
@@ -138,7 +147,7 @@ class Login extends Component {
                             </div>
 
                         </div>
-                        <p className="link_forgot_password"><a href="javascript:void(0);">Lost your password?</a></p>
+                        <p className="link_forgot_password"><a href="javascript:void(0);" onClick={(e) => this.handleForgetClick(e)}>Lost your password?</a></p>
             </div>
         );
     }

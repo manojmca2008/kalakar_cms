@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Loginscreen from './components/login/Loginscreen';
 import UploadScreen from './components/login/UploadScreen';
+import Forget from './components/login/Forget';
 class App extends Component {
   constructor(props){
     super(props);
@@ -12,6 +13,12 @@ class App extends Component {
   componentWillMount(){
     var loginPage =[];
     var uploadScreen = [];
+    if(localStorage.getItem("isForget")){
+      uploadScreen.push(<Forget parentContext={this}/>);
+      this.setState({
+        uploadScreen:uploadScreen
+      });
+    }else{
     if(localStorage.getItem("isLogin")){
       uploadScreen.push(<UploadScreen parentContext={this}/>);
       this.setState({
@@ -24,7 +31,7 @@ class App extends Component {
         uploadScreen:[]
       })
     }
-    
+  }
   }
   render() {
     return (
