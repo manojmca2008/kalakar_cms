@@ -14,7 +14,7 @@
 .dashboard_nav ._title{float:left;line-height:24px;}
 .dashboard_nav .navbar-right{margin:0;}
 .dashboard_nav .navbar-right > li > a{color:rgb(85, 85, 85);padding:15px 0 0 15px;}
-.dashboard_nav .dropdown-menu{left:inherit;right:0;min-width:250px;}
+.dashboard_nav .dropdown-menu{min-width:250px;}
 .dashboard_nav .dropdown-menu li a{display:block;padding:8px;}
 .dashboard_nav .dropdown-menu li em{display:block;padding:5px 10px 10px;border-bottom:1px solid rgba(0, 0, 0, 0.04);font:0.875em arial;font-style:italic;font-weight:bold;margin-bottom:5px;}
 
@@ -23,18 +23,29 @@
 .navbar-toggle:focus{outline:0}
 .navbar-toggle .icon-bar{display:block;width:22px;height:2px;border-radius:1px}
 .navbar-toggle .icon-bar+.icon-bar{margin-top:4px}
-
+.dashboard_nav .disable .notification{display:none;}
 
 /****/
 .dashboard_title{font-size:1.5em;padding-bottom:15px;margin-bottom:15px;border-bottom:1px solid rgba(0, 0, 0, 0.05);}
+.large_whitebox{border:1px solid rgba(0, 0, 0, 0.1);background:#fff;padding:20px;}
 
 
-@media (min-width: 768px){
-    .navbar-collapse.collapse{display: block!important;height:auto!important;padding-bottom: 0;overflow: visible!important;}
-    .navbar-right {float: right!important;margin-right:-15px;}
-    .navbar-nav > li {float:left;}
-    .navbar-toggle{display:none}
+@media (max-width: 767px) {
+    .form-group .form-control{width:100%;}
+    .dashboard_nav .notification{right:5px;}
 }
 @media (min-width: 992px) {
    .sidebar .nav > li.txt_footer_copyright{position:absolute;width:100%;bottom:40px;background:#fff;}
+   .navbar-right {float: right!important;margin-right:-15px;}
+   .perfect-scrollbar-on .sidebar .sidebar-wrapper, .sidebar .sidebar-wrapper{overflow: hidden;}
+   .navbar-collapse.collapse{display: block!important;height:auto!important;padding-bottom: 0;overflow: visible!important;}
+   .navbar-nav > li {float:left;}
+   .navbar-toggle{display:none}
+   .dashboard_nav .dropdown-menu{left:inherit;right:0;}
 }
+@media (max-width: 991px) {
+    .main-panel>.content{padding:20px 0;}
+    .dashboard_nav .navbar-toggle{margin:4px 0 0;padding:0;}
+    .navbar-toggle .icon-bar{background:#000;}  
+    .dashboard_nav .navbar-right > li > a{padding:15px 15px 0 0;}
+ }

@@ -20,7 +20,7 @@ class Dashboard extends Component {
             <div >
                 <div className="main-panel">
                     <nav className="dashboard_nav clearfix">
-                        <p className="_title hidden-sm-down">Welcome to kalakar.pro CMS </p>
+                        <p className="_title hidden-md-down">Welcome to kalakar.pro CMS </p>
                             <button type="button" className="navbar-toggle" data-toggle="collapse">
                                 <span className="sr-only">Toggle navigation</span>
                                 <span className="icon-bar"></span>
