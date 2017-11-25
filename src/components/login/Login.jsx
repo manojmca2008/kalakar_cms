@@ -121,6 +121,13 @@ class Login extends Component {
                                     <div className="error">
                                         {this.state.firebase_login_error}
                                     </div>
+                                    
+                                    <span className="lineloader">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </span>
+
                                     <div className="_mainbutalign"><button className="btn btn-primary" onClick={(event) => this.handleClick(event)}>Login</button></div>
 
                                 </fieldset>

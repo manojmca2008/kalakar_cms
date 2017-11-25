@@ -6,3 +6,16 @@ p{margin:0;}
 ._title{font:bold 1rem arial;}
 
 
+/**loader**/
+.lineloader{padding-top:10px;display:inline-block;}
+.lineloader span{height:13px;width:4px;display:inline-block;margin-right:3px;background-color:#d01d16;-webkit-animation:lineloader 1s linear infinite;-moz-animation:lineloader 1s linear infinite;animation:lineloader 1s linear infinite;-webkit-transform:scale(.91);-moz-transform:scale(.91);transform:scale(.91)}
+.lineloader span:nth-child(1){-webkit-animation-delay:.39s;-moz-animation-delay:.39s;animation-delay:.39s}
+.lineloader span:nth-child(2){-webkit-animation-delay:.52s;-moz-animation-delay:.52s;animation-delay:.52s}
+.lineloader span:nth-child(3){-webkit-animation-delay:.65s;-moz-animation-delay:.65s;animation-delay:.65s}
+@-webkit-keyframes lineloader{0%{-webkit-transform:scale(1.2);opacity:1}100%{-webkit-transform:scale(.7);opacity:.1}}
+@-moz-keyframes lineloader{0%{-moz-transform:scale(1.2);opacity:1}100%{-moz-transform:scale(.7);opacity:.1}}
+@keyframes lineloader{0%{transform:scale(1.2);opacity:1}100%{transform:scale(.7);opacity:.1}}
+
+.disableform, .disableform input, .disableform a{pointer-events:none;opacity:0.9;}
+
+.hide{display:none;}
