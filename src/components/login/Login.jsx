@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import UploadScreen from './UploadScreen';
 import { loginWithTwitter, loginWithGoogle, loginWithFacebook, login } from '../../services/auth-services';
 import Forget from './Forget';
+import { checkLogin } from '../../services/api-services';
 class Login extends Component {
     constructor(props) {
         super(props);
@@ -27,7 +28,18 @@ class Login extends Component {
         e.preventDefault();
         var self = this;
         login(this.state.email, this.state.password).then(response => {
-            this.doLogin(self);
+            let payload = {
+                email : this.state.email
+            };
+            checkLogin(payload).then(response => {                
+                if(response.result){
+                    this.doLogin(self);
+                }else{
+                    this.setState({
+                        firebase_login_error: 'Your Account is inactive so contact to administrator'
+                    });
+                }
+            });
         }).catch(err => {
             this.setState({
                 firebase_login_error: err.message

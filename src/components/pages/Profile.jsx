@@ -3,12 +3,26 @@ import {
   BrowserRouter as Router,
   Route,
   Link
-} from 'react-router-dom'
+} from 'react-router-dom';
+import { userDetails } from '../../services/api-services';
 
 
 class Profile extends Component {
+  state = { username:'', email: '', first_name : '', last_name: '',  };
   constructor(props) {
     super(props);
+  }
+  componentWillMount(){
+    let userId = 2;
+    userDetails(userId).then(response => {
+      let profileData = response.data[0];
+      this.setState({username : profileData.user_name});
+      this.setState({email : profileData.email});
+      this.setState({first_name : profileData.first_name});
+      this.setState({last_name : profileData.last_name});     
+      
+      
+    }); 
   }
   render() {
     return (
@@ -28,13 +42,13 @@ class Profile extends Component {
               <div className="col-md-3">
                 <div className="form-group label-floating is-empty">
                   <label className="control-label">Username</label>
-                  <input type="text" className="form-control" />
+                  <input type="text" className="form-control" value ={this.state.username} />
                   <span className="material-input"></span></div>
               </div>
               <div className="col-md-4">
                 <div className="form-group label-floating is-empty">
                   <label className="control-label">Email address</label>
-                  <input type="email" className="form-control" />
+                  <input type="email" className="form-control" value ={this.state.email} />
                   <span className="material-input"></span></div>
               </div>
             </div>
@@ -42,13 +56,13 @@ class Profile extends Component {
               <div className="col-md-6">
                 <div className="form-group label-floating is-empty">
                   <label className="control-label">Fist Name</label>
-                  <input type="text" className="form-control" />
+                  <input type="text" className="form-control" value ={this.state.first_name} />
                   <span className="material-input"></span></div>
               </div>
               <div className="col-md-6">
                 <div className="form-group label-floating is-empty">
                   <label className="control-label">Last Name</label>
-                  <input type="text" className="form-control" />
+                  <input type="text" className="form-control" value ={this.state.last_name} />
                   <span className="material-input"></span></div>
               </div>
             </div>

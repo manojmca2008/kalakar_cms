@@ -3,6 +3,7 @@ import { signup } from '../../services/auth-services';
 import Login from './Login';
 import Loginscreen from './Loginscreen';
 import { FormErrors } from './../FormErrors';
+import { userDetails, register } from '../../services/api-services';
 class Register extends Component {
     constructor(props) {
         super(props);
@@ -61,29 +62,37 @@ class Register extends Component {
     handleClick(e) {
         e.preventDefault();        
         signup(this.state.email, this.state.password).then(response => {
-            var result = JSON.stringify(response);
-            console.log(response);
-            console.log(response.providerData[0]);
-            console.log(response.email);
+            var result = JSON.stringify(response);            
             var payload = {
                 first_name:this.state.fname,
                 last_name: this.state.lname,
                 email: this.state.email,
                 password: this.state.password,
                 photo_url: '',
-                uid:''
+                uid:'',
+                user_source : 'ws',
+                status : 0
             }
-            this.setState({ reg_error: '' });
-            var self = this;
-            var loginscreen = [];
-            loginscreen.push(<Login parentContext={this} appContext={self.props.appContext} />);
-            var loginmessage = "Not Registered yet.Go to registration";
-            self.props.parentContext.setState({
-                loginscreen: loginscreen,
-                loginmessage: loginmessage,
-                buttonLabel: "Register",
-                isLogin: true
-            });
+            register(payload).then(response => {
+                console.log(response);
+                if(response.result){
+                    this.setState({ reg_error: '' });
+                    var self = this;
+                    var loginscreen = [];
+                    loginscreen.push(<Login parentContext={this} appContext={self.props.appContext} />);
+                    var loginmessage = "Not Registered yet.Go to registration";
+                    self.props.parentContext.setState({
+                        loginscreen: loginscreen,
+                        loginmessage: loginmessage,
+                        buttonLabel: "Register",
+                        isLogin: true
+                    });
+                }else{
+                    this.setState({
+                        reg_error: 'something went wrong.'
+                    });
+                }
+            });            
         }).catch(err => {
             this.setState({
                 reg_error: err.message

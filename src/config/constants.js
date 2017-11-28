@@ -13,5 +13,5 @@ firebase.initializeApp(firebaseConfig)
 
 export const firebaseDatabase = firebase.database().ref()
 export const firebaseAuth = firebase.auth
-export const apiUrl = 'http://slim-api.com/api/restaurant/';
+export const apiUrl = 'http://api.kalakar.com/api/cms/';
 export const restId = 1;
