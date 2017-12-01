@@ -2,36 +2,40 @@ import React, { Component } from 'react';
 import Loginscreen from './components/login/Loginscreen';
 import UploadScreen from './components/login/UploadScreen';
 import Forget from './components/login/Forget';
+import firebase from 'firebase';
 class App extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state={
-      loginPage:[],
-      uploadScreen:[]
+    this.state = {
+      loginPage: [],
+      uploadScreen: []
     }
   }
-  componentWillMount(){
-    var loginPage =[];
+  componentWillMount() {
+    var loginPage = [];
     var uploadScreen = [];
-    if(localStorage.getItem("isForget")){
-      uploadScreen.push(<Forget parentContext={this}/>);
+    if (localStorage.getItem("isForget")) {
+      uploadScreen.push(<Forget parentContext={this} />);
       this.setState({
-        uploadScreen:uploadScreen
+        uploadScreen: uploadScreen
       });
-    }else{
-    if(localStorage.getItem("isLogin")){
-      uploadScreen.push(<UploadScreen parentContext={this}/>);
-      this.setState({
-        uploadScreen:uploadScreen
+    } else {
+      var self = this;
+      firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+          uploadScreen.push(<UploadScreen parentContext={self} />);
+          self.setState({
+            uploadScreen: uploadScreen
+          });
+        } else {
+          loginPage.push(<Loginscreen parentContext={self} />);
+          self.setState({
+            loginPage: loginPage,
+            uploadScreen: []
+          })
+        }
       });
-    }else{
-      loginPage.push(<Loginscreen parentContext={this}/>);
-      this.setState({
-        loginPage:loginPage,
-        uploadScreen:[]
-      })
     }
-  }
   }
   render() {
     return (

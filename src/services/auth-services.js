@@ -86,5 +86,22 @@ import firebase from 'firebase'
         return null;
     }
 }
+
+export function checkLogin(){
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      console.log('i m here');
+      return true;
+      // User is signed in.
+      
+    } else {
+      console.log('i m here1');
+      return false;
+      // No user is signed in.
+      
+    }
+  });
+
+}
 //} 
 //export default AuthServices;

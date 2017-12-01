@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import UploadScreen from './UploadScreen';
 import { loginWithTwitter, loginWithGoogle, loginWithFacebook, login } from '../../services/auth-services';
 import Forget from './Forget';
-import { checkLogin } from '../../services/api-services';
+import { checkLogin, register } from '../../services/api-services';
 class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
             email: '',
             password: '',
-            firebase_login_error: ''
+            firebase_login_error: '',
+            loader:false,
 
         }
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -26,6 +27,7 @@ class Login extends Component {
     }
     handleClick(e) {
         e.preventDefault();
+        this.setState({loader:true});
         var self = this;
         login(this.state.email, this.state.password).then(response => {
             let payload = {
@@ -62,11 +64,31 @@ class Login extends Component {
     googleLogin(e) {
         e.preventDefault();
         var self = this;
-        loginWithGoogle().then(response => {
-            this.doLogin(self);
-        }).catch(err => {
-            console.log(err);
-        })
+        loginWithGoogle().then(response => {  
+            var payload = {
+                displayName: response.displayName,
+                first_name: '',
+                last_name: '',
+                email: response.email,
+                password: '',
+                photo_url: response.photoURL,
+                uid: response.uid,
+                user_source: 'gp',
+                status: 0
+            }
+            
+            register(payload).then(response => {
+                if (response.result) {
+                    this.doLogin(self);
+                }else {
+                    this.setState({
+                        reg_error: 'something went wrong.'
+                    });
+                }
+            }).catch(err => {
+                console.log(err);
+            });
+        });
     }
 
     twitterLogin(e) {
@@ -134,7 +156,7 @@ class Login extends Component {
                                         {this.state.firebase_login_error}
                                     </div>
                                     
-                                    <span className="lineloader">
+                                    <span className="lineloader" className={this.state.loader ? "" : "hide"}>
                                         <span></span>
                                         <span></span>
                                         <span></span>
