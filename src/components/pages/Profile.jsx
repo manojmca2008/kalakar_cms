@@ -13,17 +13,20 @@ class Profile extends Component {
     super(props);
   }
   componentWillMount(){
-    let userId = 2;
+    let userId = 1;
     userDetails(userId).then(response => {
       let profileData = response.data[0];
-      this.setState({username : profileData.user_name});
-      this.setState({email : profileData.email});
-      this.setState({first_name : profileData.first_name});
-      this.setState({last_name : profileData.last_name});     
-      
-      
+      if(typeof profileData != 'undefined'){
+        this.setState({
+          username : profileData.user_name,
+          email: profileData.email,
+          first_name: profileData.first_name,
+          last_name: profileData.last_name
+        })
+      }
     }); 
   }
+  
   render() {
     return (
       <div>
